@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Rubik Cube</title>
+</head>
+<body>
+  <ul id="controls">
+    <li><a href="#shuffle" id="button-shuffle">Shuffle</a></li>
+    <li><a href="#solve" id="button-solve">Solve</a></li>
+    <li><a href="#undo" id="button-undo">Undo</a></li>
+    <li><a href="#reset" id="button-reset">Reset</a></li>
+    <li>
+      <label>Size</label>
+      <select id="select-size">
+        <option value="3">3x3</option>
+        <option value="4">4x4</option>
+        <option value="5">5x5</option>
+        <option value="6">6x6</option>
+      </select>
+    </li>
+  </ul>
+
+  <div id="scene"></div>
+
+  <p id="info">
+    Built with <a href="http://threejs.org">Three.js</a> by <a href="https://github.com/tranthaituananh">Tran Thai Tuan Anh</a> in 2021.
+  </p>
+
+  <script src="library/jquery-2.0.3.js"></script>
+  <script src="library/three.js"></script>
+  <script src="library/OrbitControls.js"></script>
+  <script src='library/threex.domevent.js'></script>
+  <script src='library/threex.domevent.object3d.js'></script>
+  <script src="main.js"></script>
+  <script>
+    $(function() {
+      function init(dimensions) {
+        dimensions = +(dimensions) || 3;
+
+        var element = $("#scene").empty();
+        var rubik = new Rubik(element, dimensions);
+
+        $("#button-shuffle").on('click', function(e) { e.preventDefault(); rubik.shuffle() });
+        $("#button-solve").on('click', function(e) { e.preventDefault(); rubik.solve(); });
+        $("#button-undo").on('click', function(e) { e.preventDefault(); rubik.undo(); });
+        $("#button-reset").on('click', function(e) { e.preventDefault(); init(); });        
+        $("#select-size").on('change', function() { init($(this).val()) });        
+      };
+
+      init();      
+    });
+  </script>
+</body>
