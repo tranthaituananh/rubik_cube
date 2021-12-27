@@ -1,4 +1,4 @@
-# Rubik_Cube
+# Rubik Cube
 Rubik's cube solver in javascript for Web
 
 ## Features
