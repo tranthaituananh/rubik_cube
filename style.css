@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html, body {
+	height: 100%;
+}
+
+body { 
+	background-color: #000;
+	font-family: 'Roboto', sans-serif;
+	color: rgb(255, 255, 255);
+	overflow: hidden; 
+	margin: 0; 
+}
+
+p#info {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 20px;
+}
+
+a {
+	color: rgb(229, 255, 0);
+	text-decoration: none;
+}
+
+#controls { 
+	position: absolute;
+	top: 0;
+	list-style-type: none;
+	margin: 5px;
+	padding: 0;
+	max-width: 70%;
+
+}
+
+#controls > li {
+	margin: 0 5px;
+	padding: 0;
+	float: left;
+}
+
+#controls > li:after {
+	content: '~';
+	color: rgb(133, 133, 133);
+}
+
+#controls > li:last-child:after {
+	content: none;
+}
+
+#controls > li a, #controls > li label {
+	margin-right: 10px;
+	font-size: 1.2em;
+	color: rgb(255, 255, 255);
+	line-height: 2em;
+}
+
+#controls > li select {
+	color: rgb(0, 0, 0);
+	font-size: 1em;
+}
+
+#controls > li a:hover {
+	color: #ff7600;
+}
+
+#scene { 
+	height: 100%;
+}
