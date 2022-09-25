@@ -3,3 +3,5 @@
  * Shuffle
  * Click and drag plane rotation
  * Solve (by replaying moves in reverse)
+ 
+![Demo](https://user-images.githubusercontent.com/77098480/192151548-10318e4c-f6b8-4f3a-82e0-35bbd229549d.png)
